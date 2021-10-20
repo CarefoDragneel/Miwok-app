@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/number_tab"
+            style="@style/Box"
+            android:background="#ffac09"
+            android:text="Numbers" />
+
+        <TextView
+            style="@style/Box"
+            android:background="#38761d"
+            android:text="Family Members"/>
+
+        <TextView
+            style="@style/Box"
+            android:background="#5e2b97"
+            android:text="Colors"/>
+
+        <TextView
+            style="@style/Box"
+            android:background="#038bdd"
+            android:text="Phrases"/>
+
+    </LinearLayout>
+
+</ScrollView>
