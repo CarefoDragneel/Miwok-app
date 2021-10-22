@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+<!--    these are added to set the same color wherever required -->
+    <color name="color_number">#ffac09</color>
+    <color name="color_family">#38761d</color>
+    <color name="color_color">#5e2b97</color>
+    <color name="color_phrases">#038bdd</color>
 </resources>

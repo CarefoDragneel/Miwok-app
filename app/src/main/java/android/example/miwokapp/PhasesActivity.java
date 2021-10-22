@@ -29,7 +29,7 @@ public class PhasesActivity extends AppCompatActivity {
         adapter.add(new Word("әnni'nem","Come here."));
 
 //  Defining the ArrayAdapter object
-        WordAdapter number_adapter = new WordAdapter(this, adapter);
+        WordAdapter number_adapter = new WordAdapter(this, adapter,R.color.color_phrases);
 
 //  Initialising the listview
         ListView number_list_view = (ListView) findViewById(R.id.list_view);

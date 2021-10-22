@@ -8,6 +8,7 @@ import android.app.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import org.w3c.dom.Text;
 
@@ -15,9 +16,12 @@ import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
+    private int layouts_color_id;
 
-    public WordAdapter (Activity context, ArrayList<Word> wordList){
+
+    public WordAdapter (Activity context, ArrayList<Word> wordList,int color_id){
         super(context,0,wordList);
+        layouts_color_id = color_id;
     }
 
     @NonNull
@@ -48,6 +52,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
                 image.setImageResource(currentWord.getImageResourceId());
             }
 
+//  creating an object for the View class to add color to its text layouts
+            View list_text_container = listview.findViewById(R.id.text_container);
+//  now adding color using its resource id
+            int color = ContextCompat.getColor(getContext(), layouts_color_id);
+//  adding color to the layout of text container
+            list_text_container.setBackgroundColor(color);
 
 //  we return the new view that will be shown by the ArrayAdapter class
             return listview;

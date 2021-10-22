@@ -31,7 +31,7 @@ public class NumberActivity extends AppCompatActivity {
         adapter.add(new Word("na’aacha","ten",R.drawable.number_ten));
 
 //  Defining the ArrayAdapter object
-        WordAdapter number_adapter = new WordAdapter(this, adapter);
+        WordAdapter number_adapter = new WordAdapter(this, adapter,R.color.color_number);
 
 //  Initialising the listview
         ListView number_list_view = (ListView) findViewById(R.id.list_view);
