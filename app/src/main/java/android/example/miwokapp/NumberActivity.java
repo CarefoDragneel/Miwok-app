@@ -19,16 +19,16 @@ public class NumberActivity extends AppCompatActivity {
         ArrayList<Word> adapter = new ArrayList<Word>();
 
 //  Storing values in the array list
-        adapter.add(new Word("lutti","one"));
-        adapter.add(new Word("otiko","two"));
-        adapter.add(new Word("tolookosu","three"));
-        adapter.add(new Word("oyyisa","four"));
-        adapter.add(new Word("massokka","five"));
-        adapter.add(new Word("temmokka","six"));
-        adapter.add(new Word("kenekaku","seven"));
-        adapter.add(new Word("kawinta","eight"));
-        adapter.add(new Word("wo’e","nine"));
-        adapter.add(new Word("na’aacha","ten"));
+        adapter.add(new Word("lutti","one",R.drawable.number_one));
+        adapter.add(new Word("otiko","two",R.drawable.number_two));
+        adapter.add(new Word("tolookosu","three",R.drawable.number_three));
+        adapter.add(new Word("oyyisa","four",R.drawable.number_four));
+        adapter.add(new Word("massokka","five",R.drawable.number_five));
+        adapter.add(new Word("temmokka","six",R.drawable.number_six));
+        adapter.add(new Word("kenekaku","seven",R.drawable.number_seven));
+        adapter.add(new Word("kawinta","eight",R.drawable.number_eight));
+        adapter.add(new Word("wo’e","nine",R.drawable.number_nine));
+        adapter.add(new Word("na’aacha","ten",R.drawable.number_ten));
 
 //  Defining the ArrayAdapter object
         WordAdapter number_adapter = new WordAdapter(this, adapter);

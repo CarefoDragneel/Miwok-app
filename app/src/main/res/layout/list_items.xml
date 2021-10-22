@@ -8,20 +8,32 @@
         android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:orientation="horizontal" >
 
-        <TextView
-            android:layout_gravity="bottom"
-            android:id="@+id/miwok_text"
+        <ImageView
+            android:id="@+id/all_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="lutti"/>
-        <TextView
-            android:layout_gravity="top"
-            android:id="@+id/default_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="one"/>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_gravity="bottom"
+                android:id="@+id/miwok_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="lutti"/>
+            <TextView
+                android:layout_gravity="top"
+                android:id="@+id/default_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="one"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

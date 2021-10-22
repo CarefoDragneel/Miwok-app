@@ -17,16 +17,16 @@ public class FamilyActivity extends AppCompatActivity {
         ArrayList<Word> adapter = new ArrayList<Word>();
 
 //  Storing values in the array list
-        adapter.add(new Word("epe","father"));
-        adapter.add(new Word("eta","mother"));
-        adapter.add(new Word("angsi","son"));
-        adapter.add(new Word("tune","daughter"));
-        adapter.add(new Word("taachi","older brother"));
-        adapter.add(new Word("chalitti","younger brother"));
-        adapter.add(new Word("tete","older sister"));
-        adapter.add(new Word("killiti","younger sister"));
-        adapter.add(new Word("ama","grandmother"));
-        adapter.add(new Word("paapa","grandfather"));
+        adapter.add(new Word("epe","father",R.drawable.family_father));
+        adapter.add(new Word("eta","mother",R.drawable.family_mother));
+        adapter.add(new Word("angsi","son",R.drawable.family_son));
+        adapter.add(new Word("tune","daughter",R.drawable.family_daughter));
+        adapter.add(new Word("taachi","older brother",R.drawable.family_older_brother));
+        adapter.add(new Word("chalitti","younger brother",R.drawable.family_younger_brother));
+        adapter.add(new Word("tete","older sister",R.drawable.family_older_sister));
+        adapter.add(new Word("killiti","younger sister",R.drawable.family_younger_sister));
+        adapter.add(new Word("ama","grandmother",R.drawable.family_grandmother));
+        adapter.add(new Word("paapa","grandfather",R.drawable.family_grandfather));
 
 //  Defining the ArrayAdapter object
         WordAdapter family_adapter = new WordAdapter(this, adapter);

@@ -40,6 +40,15 @@ public class WordAdapter extends ArrayAdapter<Word> {
             TextView default_textView = (TextView) listview.findViewById(R.id.default_text);
 //  Setting translation from the list in the textView
             default_textView.setText(currentWord.getDefaultNumbers());
+
+//  To also accommodate phrases tab we need to use condition statements
+            if(currentWord.hasImageResource()){
+                //  Setting Image view for the input of images in the miwok app
+                ImageView image = (ImageView) listview.findViewById(R.id.all_image_view);
+                image.setImageResource(currentWord.getImageResourceId());
+            }
+
+
 //  we return the new view that will be shown by the ArrayAdapter class
             return listview;
     }

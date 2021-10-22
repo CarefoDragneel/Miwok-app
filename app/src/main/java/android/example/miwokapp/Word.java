@@ -5,11 +5,18 @@ public class Word {
 //    class variables for miwok numbers as well as default words are defined
     String miwok_number_words;
     String default_number_words;
+    int miwok_image_resource_id = -1;
 
 //    we define the constructor for the Custom class
     public Word (String m_word,String d_word){
         miwok_number_words = m_word;
         default_number_words = d_word;
+    }
+//    we overload the constructor to accommodate the image also
+    public Word(String m_word, String d_word, int resource_id){
+        miwok_number_words = m_word;
+        default_number_words = d_word;
+        miwok_image_resource_id = resource_id;
     }
 
 //    Below is the public function to return the number words in Miwok language
@@ -20,5 +27,15 @@ public class Word {
 //    Below is the public function to return the number words in the default language
     public String getDefaultNumbers(){
         return default_number_words;
+    }
+
+//    Below is the public function to return the resource id of the image
+    public int getImageResourceId(){
+        return miwok_image_resource_id;
+    }
+
+//    checking if the image is present or not
+    public boolean hasImageResource(){
+        return (miwok_image_resource_id != -1);
     }
 }
