@@ -36,5 +36,13 @@ public class PhasesActivity extends AppCompatActivity {
 
 //  connecting listview with ArrayAdapter
         number_list_view.setAdapter(number_adapter);
+        
+         number_list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Toast.makeText(view.getContext(), "hello", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 }
