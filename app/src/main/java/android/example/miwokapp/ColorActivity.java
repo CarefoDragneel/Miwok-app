@@ -32,8 +32,18 @@ public class ColorActivity extends AppCompatActivity {
 
 //  Initialising the listview
         ListView number_list_view = (ListView) findViewById(R.id.list_view);
+        
+        
 
 //  connecting listview with ArrayAdapter
         number_list_view.setAdapter(color_adapter);
+        
+         number_list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Toast.makeText(view.getContext(), "This is a demo!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 }
