@@ -24,6 +24,7 @@ public class NumberActivity extends AppCompatActivity {
         }
     };
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,7 +92,15 @@ public class NumberActivity extends AppCompatActivity {
             }
         });
     }
-//    this method is used to release the MediaPlayer object so that new data can be stored in the object or simply the memory is freed to
+
+//    releases the resources when the user closes the activity
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
+    //    this method is used to release the MediaPlayer object so that new data can be stored in the object or simply the memory is freed to
 //    perform other tasks.
     private void releaseMediaPlayer(){
 //        when mediaPlayer is null then that means the sound has stopped playing

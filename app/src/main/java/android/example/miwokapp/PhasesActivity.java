@@ -17,7 +17,7 @@ public class PhasesActivity extends AppCompatActivity {
     MediaPlayer.OnCompletionListener completionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mp) {
-            releasePlayer();
+            releaseMediaPlayer();
         }
     };
 
@@ -53,14 +53,22 @@ public class PhasesActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word wrd = adapter.get(position);
-                releasePlayer();
+                releaseMediaPlayer();
                 mediaPlayer = MediaPlayer.create(PhasesActivity.this,wrd.getAudioResource());
                 mediaPlayer.start();
                 mediaPlayer.setOnCompletionListener(completionListener);
             }
         });
     }
-    private void releasePlayer(){
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
+    private void releaseMediaPlayer(){
         if(mediaPlayer != null) mediaPlayer.release();
         mediaPlayer = null;
     }
