@@ -14,6 +14,11 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+// We are overloading the ArrayAdapter<Word> because in here getView() function can print only one textView
+// so in order to show all the things in a particular option we have
+// it is responsible for recycling of the individual list items in the list View
+// it inflates the list_item.xml because this layout shows the structure of each list items
+
 public class WordAdapter extends ArrayAdapter<Word> {
 
     private int layouts_color_id;

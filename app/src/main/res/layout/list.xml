@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--This is the list View which shows all the list items
+    It is called by individual activities like NumberActivity etc as objects
+    because each Activity is for this layout  -->
 <ListView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"

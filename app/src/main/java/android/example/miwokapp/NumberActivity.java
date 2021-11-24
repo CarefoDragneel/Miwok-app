@@ -2,13 +2,19 @@ package android.example.miwokapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class NumberActivity extends AppCompatActivity {
+
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +40,23 @@ public class NumberActivity extends AppCompatActivity {
         WordAdapter number_adapter = new WordAdapter(this, adapter,R.color.color_number);
 
 //  Initialising the listview
-        ListView number_list_view = (ListView) findViewById(R.id.list_view);
+        ListView list_view = (ListView) findViewById(R.id.list_view);
 
 //  connecting listview with ArrayAdapter
-        number_list_view.setAdapter(number_adapter);
+        list_view.setAdapter(number_adapter);
+
+//        creating event listener for the entire app view
+        list_view.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+//            @parent: signifies adapter view on which the item click listener is attached to; here, list.xml
+//            @view: signifies the view of the items in the list; here, list_item.xml
+//            @position: signifies the position reference of the list item
+//            @id: signifies the id of the list items; generally not used much
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mediaPlayer = MediaPlayer.create(NumberActivity.this,R.raw.audio_number_one);
+                mediaPlayer.start();
+            }
+        });
     }
 }

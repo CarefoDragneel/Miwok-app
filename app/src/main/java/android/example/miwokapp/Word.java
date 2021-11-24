@@ -1,5 +1,6 @@
 package android.example.miwokapp;
 
+// this custom class is to modify the array list so that it can store more data then a String
 public class Word {
 
 //    class variables for miwok numbers as well as default words are defined

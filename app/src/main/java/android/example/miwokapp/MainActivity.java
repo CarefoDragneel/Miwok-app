@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//       initialising textview obeject for Numbers miwok words
+//       initialising textview object for Numbers miwok words
         TextView number = (TextView) findViewById(R.id.number_tab);
 //        setting event listener on the number textview
         number.setOnClickListener(new View.OnClickListener() {
