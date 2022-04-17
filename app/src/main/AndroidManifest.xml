@@ -9,23 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiwokApp">
-        <activity
-            android:name=".FamilyActivity"
-            android:exported="false"
-            android:label="Family"/>
-        <activity
-            android:name=".ColorActivity"
-            android:exported="false"
-            android:label="Colors"/>
-        <activity
-            android:name=".PhasesActivity"
-            android:exported="false"
-            android:label="Phrases"/>
 
-        <activity
-            android:name=".NumberActivity"
-            android:exported="false"
-            android:label="Numbers"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
