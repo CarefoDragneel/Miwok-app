@@ -83,12 +83,13 @@ public class ColorsFragment extends Fragment {
 
                 releaseMediaPlayer();
 
-                AudioFocusRequest focusRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)
-                        .setAcceptsDelayedFocusGain(true)
-                        .setOnAudioFocusChangeListener(audioFocusChangeListener)
-                        .build();
+//                AudioFocusRequest focusRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)
+//                        .setAcceptsDelayedFocusGain(true)
+//                        .setOnAudioFocusChangeListener(audioFocusChangeListener)
+//                        .build();
 
-                int res = audioManager.requestAudioFocus(focusRequest);
+                int res = audioManager.requestAudioFocus(audioFocusChangeListener,
+                        AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
                 if (res == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
                     mediaPlayer = MediaPlayer.create(getActivity(), wrd.getAudioResource());
                     mediaPlayer.start();

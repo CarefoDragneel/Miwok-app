@@ -1,6 +1,7 @@
 package android.example.miwokapp;
 
 import android.content.Context;
+import android.media.AudioAttributes;
 import android.media.AudioFocusRequest;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -107,19 +108,22 @@ public class NumbersFragment extends Fragment {
 //                the user clicks on another item without the completion of the current one and thus, leaving the mediaPlayer object unreleased
                 releaseMediaPlayer();
 
+
 //              here we create an object of AudioFocusRequest class
 //                In this object we specify the stream type and the Audio Focus listener which we did earlier in the depricated
 //                requestAudioFocus method
 //                Along with all of that we define some new things too: (read documentation)
-                AudioFocusRequest focusRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)
-                        .setAcceptsDelayedFocusGain(true)
-                        .setOnAudioFocusChangeListener(audioFocusChangeListener)
-                        .build();
+//                AudioFocusRequest focusRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)
+//                        .setAudioAttributes(playbackAttributes)
+//                        .setAcceptsDelayedFocusGain(true)
+//                        .setOnAudioFocusChangeListener(audioFocusChangeListener)
+//                        .build();
 
 //                Here we are requesting audio focus from other apps
-//                Since the requestAudioFocus method used in the udacity class is depriciated so we use this one
+//                Since the requestAudioFocus method used in the udacity class is deprecated so we use this one
 //                @param: object of AudioFocusRequest class
-                int res = audioManager.requestAudioFocus(focusRequest);
+                int res = audioManager.requestAudioFocus(audioFocusChangeListener,
+                        AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
 
 //                audio focus returns an int value which has fixed values which are given in the AudioManager class
 //                so we create these if statement to check if we are granted the audio focus or not
@@ -171,7 +175,7 @@ public class NumbersFragment extends Fragment {
             mediaPlayer.release();
 //        we set value to null so that other memory can be allocated to the mediaPlayer object
             mediaPlayer = null;
-
+//
             audioManager.abandonAudioFocus(audioFocusChangeListener);
         }
     }

@@ -84,11 +84,12 @@ public class FamilyFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word wrd = adapter.get(position);
                 releaseMediaPlayer();
-                AudioFocusRequest focusRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)
-                        .setAcceptsDelayedFocusGain(true)
-                        .setOnAudioFocusChangeListener(audioFocusChangeListener)
-                        .build();
-                int res = audioManager.requestAudioFocus(focusRequest);
+//                AudioFocusRequest focusRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)
+//                        .setAcceptsDelayedFocusGain(true)
+//                        .setOnAudioFocusChangeListener(audioFocusChangeListener)
+//                        .build();
+                int res = audioManager.requestAudioFocus(audioFocusChangeListener,
+                        AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
                 if (res == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
 
 //                    this case means that app is granted the audio focus; So we use the media player object to run the audio
