@@ -15,6 +15,11 @@ phrases of Miwok language to encourage awareness about the
 culture.
 
 
+## App Apk
+
+You can download the application apk to run it in your machine ![here](https://github.com/CarefoDragneel/Miwok-app/blob/master/app-debug.apk)
+
+
 ## Features
 
 - Fragments to show different groups of word
